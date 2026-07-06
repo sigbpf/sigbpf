@@ -1,0 +1,36 @@
+
+# In node-0
+
+$ cd /mydata/sigbpf/scripts
+
+$ export MYMOUNT=/mydata
+
+$ ./3-docker_install.sh
+
+$ source ~/.bashrc
+
+$ ./3-k8s_install.sh master 10.10.1.1
+
+## Once the installation of Kuberentes control plane is done, 
+## it will print out an token `kubeadm join ...`. 
+## **PLEASE copy and save this token somewhere**. 
+## The worker node (**node-1**) needs this token to join the Kuberentes control plane.
+
+$ echo 'source <(kubectl completion bash)' >>~/.bashrc && source ~/.bashrc
+
+***
+
+# In node-1
+
+$ cd /mydata/sigbpf/scripts
+
+$ export MYMOUNT=/mydata
+
+$ ./3-docker_install.sh
+
+$ source ~/.bashrc
+
+$ ./3-k8s_install.sh slave
+
+# Use the token returned from the master node (**node-0**) to join the Kubernetes control plane. Run `sudo kubeadm join ...` with the token just saved. Please run the `kubeadm join` command with *sudo*
+$ sudo kubeadm join <control-plane-token>

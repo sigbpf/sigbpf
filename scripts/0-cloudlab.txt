@@ -1,0 +1,8 @@
+
+
+We used two nodes c220g5 with a 10 Gbps with Temp Filesystem Max Space setted. 
+After reserving the machines run:
+
+sudo chown -R $(id -u):$(id -g) /mydata
+cd /mydata
+export MYMOUNT=/mydata

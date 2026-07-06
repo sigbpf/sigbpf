@@ -1,0 +1,2 @@
+### In node-0
+./scripts/5-knative_install.sh

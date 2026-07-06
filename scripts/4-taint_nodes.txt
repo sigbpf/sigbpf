@@ -1,0 +1,4 @@
+
+### In node-0
+./scripts/4-taint_nodes.sh
+
