@@ -25,7 +25,7 @@ sudo make install
 cd ../
 
 ##################################################
-git clone --depth 1 https://github.com/llvm/llvm-project.git
+git clone --depth 1 --branch llvmorg-22.1.6 https://github.com/llvm/llvm-project.git
 
 cd llvm-project
 mkdir build
